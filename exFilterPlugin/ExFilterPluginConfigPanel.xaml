@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="ExFilterPlugin.ExFilterPluginConfigPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d">
+    <GroupBox Header="exFilterPlugin" Padding="10">
+        <StackPanel>
+            <StackPanel Margin="5">
+                <!-- コンボボックスで音声出力先選択 -->
+                <TextBlock>音声出力先を選択してください。</TextBlock>
+                <Grid Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.9*" />
+                        <ColumnDefinition Width="0.1*" />
+                    </Grid.ColumnDefinitions>
+                    <ComboBox Grid.Column="0" Margin="5, 0" Padding="5" Name="AudioDeviceComboBox" />
+                    <Button Grid.Column="1" Margin="5, 0" Padding="5" Click="UpdateAudioDevice">更新</Button>
+                </Grid>
+            </StackPanel>
+
+            <StackPanel Margin="5">
+                <!-- CSVファイルの選択 -->
+                <TextBlock>キーワードとexVOICEを関連付けした CSVファイル を選択して下さい。</TextBlock>
+                <Grid Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.9*" />
+                        <ColumnDefinition Width="0.1*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBox Grid.Column="0" Margin="5, 0" Padding="5" Name="CsvPathTextBox" />
+                    <Button Grid.Column="1" Margin="5, 0" Padding="5" Click="OpenCsvSelectWindow">参照</Button>
+                </Grid>
+            </StackPanel>
+
+            <StackPanel Margin="10">
+                <Button Padding="5" Click="SaveConfig">設定保存</Button>
+            </StackPanel>
+        </StackPanel>
+    </GroupBox>
+</UserControl>
